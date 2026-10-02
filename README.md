@@ -146,9 +146,12 @@ Dideploy pada **Tencent EdgeOne Makers** → [scoprevo.edgeone.dev](https://scop
 
 PM tool generik menyimpan tugas — mereka tidak mengklasifikasikannya berdasarkan scope yang telah ditandatangani. Seluruh model data SCOPREVO berpusat pada dokumen scope dan kuota revisi, sehingga kalimat "ini tidak ada dalam kesepakatan" berhenti menjadi bahan negosiasi dan mulai menjadi output sistem.
 
-## 👤 Penulis
+## 👤 Author
 
 **Rangga Utama**
+
+[![GitHub](https://img.shields.io/badge/GitHub-ranggautama47-181717?logo=github)](https://github.com/ranggautama47)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Rangga%20Utama-0A66C2?logo=linkedin)](https://www.linkedin.com/in/rangga-utama)
 
 ## 📄 Lisensi
 
