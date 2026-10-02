@@ -1,193 +1,155 @@
+
 <div align="center">
 
-<img src="frontend/public/asset/logo.png" alt="SCOPREVO Logo" width="120" height="120" />
+<img src="frontend/public/asset/logo.png" alt="SCOPREVO" width="120" />
 
 # SCOPREVO
 
-**AI-powered Scope & Revision Intelligence.**
+**Kecerdasan Buatan (AI) untuk Manajemen Scope & Revisi pada Proyek Freelance**
+
+Ubah feedback klien yang berantakan — chat WhatsApp, thread email — menjadi checklist revisi yang terstruktur dan terklasifikasi sesuai scope.
 
 **🌐 Language / Bahasa:** **🇮🇩 Indonesia** · [🇬🇧 English](./README.en.md)
 
-[![Vue 3](https://img.shields.io/badge/Vue-3.x-42b883?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Express](https://img.shields.io/badge/Express-4.x-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169e1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![Supabase](https://img.shields.io/badge/Supabase-Database-3ecf8e?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
-[![EdgeOne](https://img.shields.io/badge/EdgeOne-Makers-0052d9?style=for-the-badge&logo=tencentqq&logoColor=white)](https://edgeone.ai/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-scoprevo.edgeone.dev-0B0B0B?style=for-the-badge&labelColor=CCFF00&color=0B0B0B)](https://scoprevo.edgeone.dev)
+[![License: MIT](https://img.shields.io/badge/License-MIT-CCFF00?style=for-the-badge&labelColor=0B0B0B)](LICENSE)
+[![Status](https://img.shields.io/badge/status-live-CCFF00?style=for-the-badge&labelColor=0B0B0B)](https://scoprevo.edgeone.dev)
 
-[![DevHandal 2026](https://img.shields.io/badge/DevHandal-2026%20Batch%202-ff6b35?style=for-the-badge)](https://devhandal.codepolitan.com/)
-[![License](https://img.shields.io/badge/License-MIT-1A1A1A?style=for-the-badge)](./LICENSE)
-[![Status](https://img.shields.io/badge/Status-Live-2A9D8F?style=for-the-badge)](https://scoprevo.edgeone.dev/)
-
-> Ubah feedback klien yang berantakan menjadi revisi yang jelas — dan ketahui mana yang termasuk atau di luar scope proyek.
+![Vue 3](https://img.shields.io/badge/Vue%203-35495E?logo=vuedotjs&logoColor=4FC08D)
+![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
 
 </div>
-
----
-
-> **Catatan penamaan/brand:** produk ini sebelumnya bernama ScopeGuard; SCOPREVO (Scope + Revision) adalah nama saat ini dan seterusnya. Identitas visual (logo, sistem warna, simbol brand) secara sengaja **tidak dikunci di dokumen ini** — kepemilikan tersebut berada pada UI/UX Lead sesuai pembagian peran multi-AI (dokumen ini, sebagai output Product/System Architect, hanya mencakup scope, data model, AI contract, dan roadmap).
-
-SCOPREVO mengubah feedback klien yang berantakan (chat WhatsApp, email) menjadi checklist revisi yang terstruktur, sekaligus secara otomatis mendeteksi permintaan mana yang masih termasuk scope proyek dan mana yang berpotensi menjadi pekerjaan tambahan (out of scope).
-
----
-
-## 📌 Daftar Isi
-
-- [Preview Aplikasi](#-preview-aplikasi)
-- [Masalah](#-masalah)
-- [Solusi](#-solusi)
-- [Kenapa ini, bukan PM tool generik](#-kenapa-ini-bukan-pm-tool-generik)
-- [Value inti dalam satu kalimat](#-value-inti-dalam-satu-kalimat)
-- [Cakupan MVP (yang termasuk)](#-cakupan-mvp-yang-termasuk)
-- [Ditunda secara eksplisit (tidak masuk MVP)](#-ditunda-secara-eksplisit-tidak-masuk-mvp)
-- [Mengukur Dampak (wajib untuk case study)](#-mengukur-dampak-wajib-untuk-case-study)
-- [Platform & Tech Stack](#-platform--tech-stack)
-- [Dokumentasi dalam Set Ini](#-dokumentasi-dalam-set-ini)
-
----
-
-## 📸 Preview Aplikasi
-
-<table>
-<tr>
-<td width="50%">
-
-**Dashboard**
-<img src="docs/screenshots/dashboard.png" alt="Dashboard SCOPREVO — ringkasan proyek aktif, revisi terpakai, revisi tersisa, dan konfirmasi tertunda" width="100%" />
-
-</td>
-<td width="50%">
-
-**Proyek**
-<img src="docs/screenshots/projects.png" alt="Halaman daftar proyek SCOPREVO" width="100%" />
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-**Riwayat**
-<img src="docs/screenshots/history.png" alt="Halaman riwayat revision batch SCOPREVO" width="100%" />
-
-</td>
-<td width="50%">
-
-**Pengaturan**
-<img src="docs/screenshots/settings.png" alt="Halaman pengaturan SCOPREVO" width="100%" />
-
-</td>
-</tr>
-</table>
-
-> **Catatan:** screenshot Dashboard di atas sudah asli. Tiga slot lain (Proyek, Riwayat, Pengaturan) menunggu file gambar — lihat instruksi di bawah dokumen ini untuk cara mengisinya.
 
 ---
 
 ## 🎯 Masalah
 
-Freelancer dan agency kecil di Indonesia kehilangan waktu dan uang karena:
-1. Feedback klien tersebar dan tidak terstruktur (WhatsApp, email, campur aduk dengan basa-basi).
-2. Tidak ada batas jelas antara "revisi yang disepakati" dan "request baru yang harusnya kena biaya tambahan" → scope creep.
-3. Klien enggan pakai tools project management berat (Jira/Trello/Asana) yang butuh onboarding.
+Freelancer sering kehilangan uang karena **scope creep** (pekerjaan membengkak di luar kesepakatan). Feedback klien datang dalam bentuk chat WhatsApp atau thread email yang berantakan — setiap pesan terdengar mendesak, tidak ada yang diklasifikasikan, dan saat Anda menyadari separuh permintaan tersebut berada di luar scope, Anda sudah mengerjakannya secara gratis.
+
+PM tool generik (Trello, Notion, Jira) hanya menyimpan kekacauan tersebut. Mereka tidak memberi tahu Anda **permintaan mana yang sebenarnya masuk dalam scope**.
 
 ## 💡 Solusi
 
-Satu alur inti, bukan aplikasi serba bisa:
-Client sends messy feedback (text)
-↓
-AI extracts & classifies
-↓
-Structured revision checklist
-(IN_SCOPE / OUT_OF_SCOPE / NEEDS_REVIEW)
-↓
-Revision quota tracked (2/3 used)
-↓
-Magic link sent to client
-↓
-Client confirms — no login needed
+SCOPREVO bertindak sebagai **penjaga scope**. Paste feedback mentah dari klien → AI memecahnya menjadi checklist revisi terstruktur di mana **setiap item diklasifikasikan sebagai `IN_SCOPE`, `OUT_OF_SCOPE`, atau `NEEDS_REVIEW`** — masing-masing dilengkapi dengan deskripsi masalah yang jelas, rekomendasi, dan alasan yang masuk akal. Klien melakukan konfirmasi melalui magic link, dan kuota revisi dilacak secara transparan.
 
+## ✨ Fitur Utama
 
-## 🧭 Kenapa ini, bukan PM tool generik
-
-Moxie, Plutio, dan Odoo adalah platform all-in-one (invoicing, CRM, scheduling, contracts, dll). Keberadaan mereka justru memvalidasi bahwa freelancer butuh business tooling — tapi tak satupun fokus mendalam pada satu masalah spesifik: **mengekstrak dan mengklasifikasi revisi dari feedback berantakan, lalu melindungi scope proyek secara real-time.** SCOPREVO sengaja sempit: satu workflow, dikerjakan tuntas.
-
-## ✨ Value inti dalam satu kalimat
-
-> "AI mengubah feedback klien yang tidak terstruktur menjadi checklist revisi yang bisa ditindaklanjuti, dan melindungi freelancer dari scope creep."
-
-## ✅ Cakupan MVP (yang termasuk)
-
-- Input: paste teks mentah (WhatsApp/email copy-paste)
-- AI extraction → structured JSON (item, kategori, klasifikasi scope, alasan)
-- Revision quota tracking per project
-- Magic link client portal (tanpa login)
-- Client sign-off / confirm
-
-##  🚫 Ditunda secara eksplisit (tidak masuk MVP)
-
-- Integrasi WhatsApp Business API
-- Transkripsi voice note
-- OCR / PDF / DOCX / XLSX ingestion
-- Payment/billing
-- Team roles / RBAC
-- Dashboard analytics
-
-Fitur-fitur ini sah untuk Phase 2/3 — sengaja ditunda supaya MVP bisa dirilis dan didemokan dengan bersih.
-
-These are legitimate Phase 2/3 features — deferred so the MVP ships and demos cleanly.
-
-## 📊 Mengukur Dampak (wajib untuk case study)
-
-Setiap klaim harus berasal dari pengukuran nyata, bukan estimasi marketing:
-
-| Metrik | Manual | SCOPREVO |
-|---|---|---|
-| Waktu memahami feedback | ~12–30 menit | ~10–30 detik (AI) |
-| Request ambigu yang tertangkap | Sering terlewat | Di-flag sebagai NEEDS_REVIEW |
-| Request di luar scope yang tertangkap | Sering terlewat | Langsung di-flag dengan alasan |
-
-**Status: belum ada beta tester nyata yang teridentifikasi.** Ini risiko terbuka — case study before/after butuh sampel feedback asli dari kenalan freelancer/agency, bukan yang dibuat-buat. Jangan tulis angka case study sampai ini terselesaikan.
-
-## 🛠️ Platform & Tech Stack
-
-SCOPREVO dibangun untuk **DevHandal 2026 Batch 2 (Codepolitan x Tencent EdgeOne)** — Misi 2 mensyaratkan review teknis / tutorial berdasarkan project yang benar-benar published di EdgeOne Makers, jadi aplikasinya harus live di platform tersebut (bukan cuma dideskripsikan).
-
-**Stack yang dikunci:**
-
-| Layer | Pilihan |
+| Fitur | Deskripsi |
 |---|---|
-| Frontend | Vue 3 + Vite + TypeScript |
-| Backend | Express.js + TypeScript |
-| Deployment / Hosting | Tencent EdgeOne Makers |
-| Serverless Runtime | EdgeOne Cloud Functions (Express mounted sebagai function handler) |
-| Database | PostgreSQL |
-| Database Provider | Supabase |
-| AI | EdgeOne Models / external LLM API |
-| Opsional | EdgeOne KV (cache/session saja, bukan primary storage), EdgeOne Blob, EdgeOne Observability |
+| **🤖 Ekstraksi Feedback AI** | Paste thread WhatsApp/email mentah — AI memecahnya menjadi item terstruktur. Setiap item diklasifikasikan `IN_SCOPE` / `OUT_OF_SCOPE` / `NEEDS_REVIEW` dengan masalah, rekomendasi, dan alasan. Divalidasi menggunakan skema Zod. |
+| **📄 Parsing Dokumen Scope** | Upload dokumen scope proyek (PDF / DOCX) — diparsing di sisi server dengan `pdf-parse` dan `mammoth` untuk mendasari keputusan AI pada perjanjian yang sebenarnya. |
+| **🎯 Pelacakan Kuota Revisi** | Kuota revisi per proyek (mis. terpakai 2 dari 3) dengan progres visual — scope creep menjadi titik data, bukan lagi bahan perdebatan. |
+| **🔗 Portal Klien Magic-Link** | Klien mengonfirmasi atau menyanggah revisi melalui link portal ber-token — tidak memerlukan akun atau login di sisi mereka. |
+| **📁 Manajemen Proyek** | Ringkasan dashboard, CRUD proyek, riwayat batch revisi per proyek, dan pengaturan — semuanya di satu tempat. |
+| **📴 Ketahanan Offline-First** | Penyimpanan lokal IndexedDB + SWR (stale-while-revalidate) + deteksi status jaringan — aplikasi tetap berjalan saat koneksi terputus. |
+| **🌐 Bilingual (EN / ID)** | i18n penuh dengan pilihan bahasa Inggris dan Indonesia. |
+| **🔐 Backend yang Mengutamakan Keamanan** | Helmet, autentikasi JWT, hashing bcryptjs, pembatasan akses (`rate-limiter-flexible`), dan validasi request Zod di setiap rute. |
+| **⚙️ Kunci AI BYOK** | Pengguna membawa kunci API provider LLM mereka sendiri; server melacak penggunaan AI per akun. |
 
-**Kenapa bukan KV/Blob sebagai primary storage:** Data model SCOPREVO inherently relasional (Account → Project → RevisionBatch → RevisionItem, dengan foreign key, enum, dan kalkulasi quota yang bergantung pada filtered count). Layer KV/Blob native EdgeOne cocok untuk cache, session token, dan konfigurasi sederhana — bukan untuk bentuk data ini. Karena itu dipakai PostgreSQL via Supabase.
+## 📸 Tangkapan Layar
 
-**Catatan struktur deployment (belum diverifikasi — konfirmasi di console EdgeOne sebelum membangun):** pemahaman saat ini adalah satu EdgeOne project dengan satu root directory, di mana backend Express berada di dalam folder `cloud-functions/` bersamaan dengan source Vue frontend (mengikuti `express-template` milik EdgeOne), bukan dua folder `apps/web` + `apps/api` dengan root terpisah dalam satu project. Kalau memang ingin dua deployment sepenuhnya terpisah, itu membutuhkan dua EdgeOne project yang menunjuk ke dua subdirektori — konfirmasi ini di console sebelum mengunci layout folder.
-
-## 📚 Dokumentasi dalam Set Ini
-
-| Dokumen | Deskripsi |
+| Dashboard | Proyek |
 |---|---|
-| 📘 [`README.md`](./README.md) | File ini — overview project (Bahasa Indonesia) |
-| 📘 [`README.en.md`](./README.en.md) | Versi Bahasa Inggris |
-| 🗺️ [`PHASES.md`](./PHASES.md) | Roadmap build, hari per hari |
-| 🗄️ [`DATABASE.md`](./DATABASE.md) | Relational data model (ERD + schema) |
-| 📐 [`UML.md`](./UML.md) | Use case, sequence, dan state diagram |
-| 🏗️ [`APPLICATION_ARCHITECTURE.md`](./APPLICATION_ARCHITECTURE.md) | Layered architecture + API contract |
-| 🎨 [`DESIGN_SYSTEM_BRUTALIST.md`](./DESIGN_SYSTEM_BRUTALIST.md) | Neo-Brutalist design system v2.1 |
+| ![Dashboard](docs/screenshots/dashboard.png) | ![Projects](docs/screenshots/projects.png) |
 
----
+| Riwayat Revisi | Pengaturan |
+|---|---|
+| ![History](docs/screenshots/history.png) | ![Settings](docs/screenshots/settings.png) |
 
-<div align="center">
+## 🛠 Tech Stack
 
-**Dibangun dengan** ❤️ **untuk DevHandal 2026 Batch 2**
+**Frontend** — Vue 3 · Vite · TypeScript (strict) · Tailwind CSS · Pinia · Vue Router · i18n (EN/ID) · IndexedDB (`idb`) · Storybook
 
-[![Codepolitan](https://img.shields.io/badge/Codepolitan-x%20Tencent%20EdgeOne-1A1A1A?style=flat-square)](https://codepolitan.com/)
-[![EdgeOne Makers](https://img.shields.io/badge/Powered%20by-EdgeOne%20Makers-006D77?style=flat-square)](https://edgeone.ai/)
+**Backend** — Express.js · TypeScript (strict) · Zod · JWT + bcryptjs · PostgreSQL (Supabase) · Redis (Upstash, `ioredis`) · Nodemailer · WebSocket (`ws`) · Parsing PDF/DOCX (`pdf-parse`, `mammoth`)
 
-</div>
+**Infrastruktur** — Tencent EdgeOne Makers (deployment) · Supabase (database) · Upstash (Redis)
+
+## 🚀 Memulai
+
+### Prasyarat
+
+- Node.js 18+
+- Database PostgreSQL (atau proyek Supabase)
+- Instance Redis (atau Upstash)
+- Kunci API LLM (BYOK — bring your own key)
+
+### 1. Clone repo
+
+```bash
+git clone [https://github.com/ranggautama47/scoprevo.git](https://github.com/ranggautama47/scoprevo.git)
+cd scoprevo
+
+```
+
+### 2. Backend
+
+```bash
+cd backend
+cp .env.example .env        # isi dengan kredensial Anda
+npm install
+npm run dev                 # berjalan di http://localhost:3000
+
+```
+
+Variabel environment utama (lihat `backend/.env.example` untuk daftar lengkapnya): `DATABASE_URL`, `REDIS_URL`, `JWT_SECRET`, `RESEND_API_KEY` (atau SMTP), dan kunci provider LLM.
+
+### 3. Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev                 # berjalan di http://localhost:5173
+
+```
+
+## 🧪 Pengujian
+
+```bash
+cd backend
+npm test                    # seluruh test suite backend (node run-tests.js)
+
+```
+
+Test suite ini mencakup keamanan auth, alur email, siklus hidup proyek, dan ketahanan Redis. Skenario E2E berada di dalam folder `tests/`.
+
+## 📁 Struktur Proyek
+
+```text
+├── frontend/          # Vue 3 SPA (views, stores, i18n, resilience layer)
+├── backend/           # Express API (controllers, services, repositories, migrations)
+│   └── src/tests/     # backend test suites
+├── docs/              # architecture, phases, database, UML, design system
+└── tests/             # script pengujian E2E
+
+```
+
+Lihat [docs/PROJECT_STRUCTURE.md](https://www.google.com/search?q=docs/PROJECT_STRUCTURE.md) untuk rincian lengkapnya.
+
+## 📚 Dokumentasi
+
+| Dokumen | Konten |
+| --- | --- |
+| [PHASES.md](https://www.google.com/search?q=docs/architecture/PHASES.md) | Fase pengerjaan & roadmap implementasi |
+| [DATABASE.md](https://www.google.com/search?q=docs/ai%2520context/DATABASE.md) | Skema Database & ERD |
+| [UML.md](https://www.google.com/search?q=docs/ai%2520context/UML.md) | Diagram UML |
+| [DESIGN_SYSTEM_BRUTALIST.md](https://www.google.com/search?q=docs/architecture/DESIGN_SYSTEM_BRUTALIST.md) | Sistem desain Brutalist |
+| [KNOWN_ISSUES.md](https://www.google.com/search?q=docs/KNOWN_ISSUES.md) | Masalah umum & batasan |
+
+## ☁️ Deployment
+
+Dideploy pada **Tencent EdgeOne Makers** → [scoprevo.edgeone.dev](https://scoprevo.edgeone.dev)
+
+## 🤝 Kenapa SCOPREVO dan bukan PM tool generik?
+
+PM tool generik menyimpan tugas — mereka tidak mengklasifikasikannya berdasarkan scope yang telah ditandatangani. Seluruh model data SCOPREVO berpusat pada dokumen scope dan kuota revisi, sehingga kalimat "ini tidak ada dalam kesepakatan" berhenti menjadi bahan negosiasi dan mulai menjadi output sistem.
+
+## 👤 Penulis
+
+**Rangga Utama**
+
+## 📄 Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
